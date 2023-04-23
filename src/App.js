@@ -2,13 +2,14 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import SingleCard from './components/SingleCard'
 
+
 const cardImages=[
-  {"src":"./build/img/potion-1.png",matched:false},
-  {"src":"./build/img/ring-1.png",matched:false},
-  {"src":"./build/img/scroll-1.png",matched:false},
-  {"src":"./build/img/shield-1.png",matched:false},
-  {"src":"./build/img/sword-1.png",matched:false},
-  {"src":"./build/img/helmet-1.png",matched:false}
+  {"src":"/img/potion-1.png",matched:false},
+  {"src":"/img/ring-1.png",matched:false},
+  {"src":"/img/scroll-1.png",matched:false},
+  {"src":"/img/shield-1.png",matched:false},
+  {"src":"/img/sword-1.png",matched:false},
+  {"src":"/img/helmet-1.png",matched:false}
 ]
 
 
@@ -65,6 +66,7 @@ function App() {
   console.log(cards)
 
   // reset choices and increase turn
+  const prevTurns=0;
   const resetTurn = () =>{
     setChoiceOne(null)
     setChoiceTwo(null)
@@ -73,7 +75,10 @@ function App() {
   }
 
   // start a new game automatically
-  useEffect(() =>{
+  if(prevTurns>=10){
+    
+  }
+    useEffect(() =>{
     shuffleCards()
   },[])
 
